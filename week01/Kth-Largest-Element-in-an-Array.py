@@ -1,10 +1,10 @@
-# Problem Link : https://leetcode.com/problems/kth-largest-element-in-an-array/
-# Problem Number : 215
-# Problem Tag : Array, Heap
+# Problem Link : https://leetcode.com/problems/move-zeroes/
+# Problem Number : 283
+# Problem Tag : Array
 # Author : Cinmoy Das (github : https://github.com/cinmoy98)
 # Date : 30/3/2022
 
-# Approach 1 (Using heap)
+# Approach 1
 ################################################################
 class Solution:
     def findKthLargest(self, nums: List[int], k: int) -> int:
