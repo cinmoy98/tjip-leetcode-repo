@@ -4,7 +4,8 @@
 # Author : Cinmoy Das (github : https://github.com/cinmoy98)
 # Date : 30/3/2022
 
-# Approach 1,Time-complexity--> O(nlog(n)), Space-Compllexity--> O(1) 
+# Approach 1 --> Sorting
+# Time-complexity--> O(nlog(n)), Space-Compllexity--> O(1) 
 ################################################################
 class Solution:
     def majorityElement(self, nums: List[int]) -> int:
@@ -20,3 +21,25 @@ class Solution:
                     return nums[i]
                 mx = 1
         return nums[i]
+
+# Code Optimized        
+# Time-complexity--> O(nlog(n)), Space-Compllexity--> O(1) 
+################################################################
+class Solution:
+    def majorityElement(self, nums: List[int]) -> int:
+        nums.sort()
+        return nums[floor(len(nums)/2)]
+
+
+
+# Approach 2 --> Boyer-Moore Voting Algorithm
+# Time-complexity--> O(n), Space-Compllexity--> O(1)
+################################################################
+class Solution:
+    def majorityElement(self, nums: List[int]) -> int:
+        count = 0
+        candidate = None
+        for elmnt in nums:
+            candidate = (elmnt if count==0 else candidate)
+            count += (1 if elmnt==candidate else -1)
+        return candidate
