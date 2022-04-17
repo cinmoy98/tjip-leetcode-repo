@@ -33,3 +33,38 @@ class Solution:
                 break
         return result
 
+# Approach 2 (Frequency counting)
+# Time-complexity--> O(N)
+# Space-Compllexity--> O(N)
+####################################################################
+
+class Solution:
+    def longestCommonPrefix(self, strs: List[str]) -> str:
+        freqs = {}
+        output = []
+        result = ""
+        for s in strs:
+            for i in range(len(s)):
+                if s[i] not in freqs:
+                    freqs[s[i]]={i:0}
+                    
+                if i not in freqs[s[i]]:
+                    freqs[s[i]][i]=0
+                
+                freqs[s[i]][i] += 1
+                
+                if freqs[s[i]][i]==len(strs):
+                    output.append((i,s[i]))
+                    
+        k=1
+        if len(output)>=1 and output[0][0]==0:
+            result=result+output[0][1]
+        
+        while(k<len(output)):
+            if output[k][0]==output[k-1][0]+1:
+                result=result+output[k][1]
+            else:
+                break
+            k+=1
+        
+        return result
