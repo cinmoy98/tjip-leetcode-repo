@@ -5,7 +5,7 @@
 # Date : 29/04/2022
 
 # Approach 1 --> Hashmap
-# Time-complexity--> O(n), Space-Compllexity--> O(1) 
+# Time-complexity--> O(n), Space-Compllexity--> O(1)
 ################################################################
 class Solution:
     def romanToInt(self, s: str) -> int:
